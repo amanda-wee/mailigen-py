@@ -1,0 +1,14 @@
+Python wrapper for the MailiGen API.
+
+Original MailiGen API download:
+
+    http://api.mailigen.com/1.0/download/mgapi-python.zip
+
+To install via pip:
+
+    pip install https://github.com/eugene-wee/mailigen-py/tarball/master
+
+Usage:
+
+    from mailigen.lib.MGAPI import MGAPI
+    # Refer to examples for more.
