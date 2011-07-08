@@ -1,7 +1,7 @@
 import urlparse
 import urllib
 import socket
-import simplejson
+import json
 
 class MGAPI:
 	version = "1.0"
@@ -378,7 +378,7 @@ class MGAPI:
 		
 		[throw, response] = response.split("\r\n\r\n", 2)
 		
-		serial = simplejson.loads(response)
+		serial = json.loads(response)
 		if response and serial is None:
 			response = {"error": "Bad Response.  Got This: "  + response, "code": "-99"}
 		else:
