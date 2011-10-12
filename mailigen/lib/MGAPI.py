@@ -357,13 +357,10 @@ class MGAPI:
 				sock.connect(("ssl://" + host, 443))
 			else:
 				sock.connect((host, 80))
-		except socket.error, msg:
-			sock = None
-
-		if sock is None:
-			self.errorMessage = "Could not connect (ERR %d: %s)" % (socker.error, msg)
+		except socket.error as msg:
+			self.errorMessage = "Could not connect (socket.error: %s)" % msg
 			self.errorCode = "-99"
-			return false
+			return False
 		
 		response = ""
 		sock.send(payload)
@@ -409,4 +406,3 @@ class MGAPI:
 			return urllib.urlencode(ret, doseq=True)
 		else:
 			return ret
-
